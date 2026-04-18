@@ -9,7 +9,6 @@ import { Footer } from "@/components/sections/Footer";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Premium Navigation (Simplified/Integrated in Hero/Footer usually, but let's keep it clean) */}
       <HeroSection />
       <CataloguePreview />
       <BrandStory />

@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ASSETS } from "@/app/assets";
 import { useRef } from "react";
-import { GoldIcon } from "@/components/ui/GoldIcon"; // To be created
 
 export function BrandStory() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,19 +20,17 @@ export function BrandStory() {
           {/* Image Side */}
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden">
-              <motion.img 
+              <motion.img
                 style={{ y: imgY }}
-                src={ASSETS.story.image} 
-                alt="Nosso Ateliê" 
+                src={ASSETS.story.image}
+                alt="Nosso Ateliê"
                 className="w-full h-full object-cover scale-125"
               />
             </div>
-            {/* Floating Gold Frame Effect */}
             <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-gold-500/40 -z-10" />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-gold-500/40 -z-10" />
-            
-            {/* Excellence Badge */}
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
@@ -44,16 +41,15 @@ export function BrandStory() {
             </motion.div>
           </div>
 
-          {/* Text Side */}
           <div className="lg:pl-12">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-gold-600 font-medium tracking-widest uppercase text-xs block mb-4"
             >
               Exclusividade Amoura
             </motion.span>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -61,7 +57,7 @@ export function BrandStory() {
             >
               {ASSETS.story.title}
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -69,9 +65,9 @@ export function BrandStory() {
             >
               {ASSETS.story.description}
             </motion.p>
-            
+
             <div className="grid grid-cols-2 gap-8 mb-12">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
@@ -85,7 +81,7 @@ export function BrandStory() {
                   <p className="text-sm text-stone-500 font-light">Costura precisa e acabamento artesanal.</p>
                 </div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
@@ -101,7 +97,7 @@ export function BrandStory() {
               </motion.div>
             </div>
 
-            <motion.button 
+            <motion.button
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
