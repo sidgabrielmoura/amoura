@@ -31,7 +31,7 @@ export function Footer() {
             <ul className="space-y-4 text-stone-400 font-light text-sm">
               <li><a href="#" className="hover:text-gold-400 transition-colors">Início</a></li>
               <li><a href="#" className="hover:text-gold-400 transition-colors">Coleções</a></li>
-              <li><a href="#" className="hover:text-gold-400 transition-colors">Nosso Ateliê</a></li>
+              <li><a href="#" className="hover:text-gold-400 transition-colors">Nosso Processo</a></li>
               <li><a href="#" className="hover:text-gold-400 transition-colors">Tecnologia</a></li>
               <li><a href="#" className="hover:text-gold-400 transition-colors">Instalação</a></li>
             </ul>

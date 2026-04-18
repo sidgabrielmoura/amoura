@@ -1,50 +1,70 @@
 'use client';
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ASSETS } from "@/app/assets";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
-import { useRef } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = ASSETS.hero.slides;
   
-  // Parallax effect for the background image
+  // Auto-slide every 6 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+  // Parallax effect
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   });
   
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-[100vh] w-full overflow-hidden flex items-center justify-center">
-      {/* Background Image with Parallax */}
-      <motion.div 
-        style={{ y }}
-        className="absolute inset-0 z-0"
-      >
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        <img 
-          src={ASSETS.hero.backgroundImage} 
-          alt="Amoura Cortinas" 
-          className="w-full h-full object-cover scale-110"
-        />
-      </motion.div>
+    <section id="inicio" ref={containerRef} className="relative h-[100vh] w-full overflow-hidden flex items-center justify-center bg-stone-900">
+      {/* Background Slider */}
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1.05 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute inset-0 z-0 bg-stone-900"
+        >
+          <div className="absolute inset-0 bg-black/40 z-10" />
+          <motion.div style={{ y }} className="w-full h-full">
+            <img 
+              src={slides[currentSlide].image} 
+              alt={slides[currentSlide].title} 
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Curtain Reveal Overlays */}
+      {/* Curtain Reveal Overlays (Only on initial load) */}
       <motion.div 
         initial={{ scaleX: 1 }}
         animate={{ scaleX: 0 }}
-        transition={{ duration: 1.5, ease: [0.87, 0, 0.13, 1], delay: 0.5 }}
+        transition={{ duration: 1.8, ease: [0.87, 0, 0.13, 1], delay: 0.2 }}
         style={{ originX: 0 }}
         className="absolute inset-y-0 left-0 w-1/2 bg-paper z-50 pointer-events-none border-r border-gold-400/30"
       />
       <motion.div 
         initial={{ scaleX: 1 }}
         animate={{ scaleX: 0 }}
-        transition={{ duration: 1.5, ease: [0.87, 0, 0.13, 1], delay: 0.5 }}
+        transition={{ duration: 1.8, ease: [0.87, 0, 0.13, 1], delay: 0.2 }}
         style={{ originX: 1 }}
         className="absolute inset-y-0 right-0 w-1/2 bg-paper z-50 pointer-events-none border-l border-gold-400/30"
       />
@@ -54,14 +74,17 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.8 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="max-w-4xl mx-auto"
         >
           <span className="inline-block text-gold-400 font-medium tracking-[0.2em] uppercase text-sm mb-4">
             {ASSETS.brand.name}
           </span>
-          <h1 className="text-5xl md:text-8xl mb-6 max-w-4xl mx-auto leading-[1.1]">
+          
+          <h1 className="text-5xl md:text-8xl mb-6 leading-[1.1]">
             {ASSETS.hero.title}
           </h1>
+          
           <p className="text-lg md:text-xl font-light text-white/80 max-w-2xl mx-auto mb-10">
             {ASSETS.hero.subtitle}
           </p>
@@ -78,16 +101,49 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-      >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-gold-500/50 to-transparent" />
-        <span className="text-[10px] text-gold-400/60 uppercase tracking-[0.3em]">Scroll</span>
-      </motion.div>
+      {/* Slider Controls */}
+      <div className="absolute bottom-12 left-0 w-full flex items-center justify-between px-12 z-30">
+        <div className="flex gap-4">
+          <button 
+            onClick={prevSlide}
+            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button 
+            onClick={nextSlide}
+            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Indicators */}
+        <div className="flex gap-3">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentSlide(i)}
+              className={cn(
+                "h-1 transition-all duration-500",
+                currentSlide === i ? "w-12 bg-gold-500" : "w-6 bg-white/20"
+              )}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Auto-play progress bar */}
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/10 z-30">
+        <motion.div
+          key={currentSlide}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 6, ease: "linear" }}
+          style={{ originX: 0 }}
+          className="h-full bg-gold-500/50"
+        />
+      </div>
     </section>
   );
 }

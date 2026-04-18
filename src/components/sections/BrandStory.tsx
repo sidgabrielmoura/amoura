@@ -14,7 +14,7 @@ export function BrandStory() {
   const imgY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <section ref={containerRef} className="py-24 bg-white overflow-hidden">
+    <section id="nossa-historia" ref={containerRef} className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image Side */}
@@ -78,7 +78,7 @@ export function BrandStory() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gold-900 mb-1">Feito à Mão</h4>
-                  <p className="text-sm text-stone-500 font-light">Costura precisa e acabamento artesanal.</p>
+                  <p className="text-sm text-stone-500 font-light">Acabamento de precisão e detalhes artesanais.</p>
                 </div>
               </motion.div>
               <motion.div
@@ -106,7 +106,7 @@ export function BrandStory() {
               <div className="w-12 h-12 rounded-full border border-gold-500 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
                 →
               </div>
-              Conheça o nosso ateliê
+              Conheça o nosso processo
             </motion.button>
           </div>
         </div>

@@ -5,17 +5,25 @@ import { TechnicalSpecs } from "@/components/sections/TechnicalSpecs";
 import { InstallationJourney } from "@/components/sections/InstallationJourney";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { Footer } from "@/components/sections/Footer";
+import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
+import { EnvironmentsSection } from "@/components/sections/EnvironmentsSection";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { FloatingMenu } from "@/components/sections/FloatingMenu";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <HeroSection />
       <CataloguePreview />
+      <BeforeAfterSection />
       <BrandStory />
+      <EnvironmentsSection />
       <TechnicalSpecs />
       <InstallationJourney />
       <SocialProof />
+      <FAQSection />
       <Footer />
+      <FloatingMenu />
     </main>
   );
 }

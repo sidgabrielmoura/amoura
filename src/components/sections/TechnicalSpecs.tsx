@@ -41,8 +41,8 @@ const specs = [
   },
   {
     icon: Ruler,
-    title: "Ateliê Sob Medida",
-    description: "Corte e costura personalizados para cada janela e vão.",
+    title: "Concepção Sob Medida",
+    description: "Corte e acabamento personalizados para cada janela e vão.",
     color: "bg-gold-500",
     textColor: "text-gold-950"
   }
@@ -50,7 +50,7 @@ const specs = [
 
 export function TechnicalSpecs() {
   return (
-    <section className="py-24 bg-paper-dark">
+    <section id="detalhes" className="py-24 bg-paper-dark">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.span 
@@ -73,7 +73,7 @@ export function TechnicalSpecs() {
             transition={{ delay: 0.2 }}
             className="text-stone-500 font-light"
           >
-            Combinamos a tradição da alta costura com as inovações mais modernas do mercado de decoração.
+            Combinamos a tradição da alta alfaiataria com as inovações mais modernas do mercado de decoração.
           </motion.p>
         </div>
 

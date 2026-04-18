@@ -17,7 +17,7 @@ const steps = [
   {
     icon: Hammer,
     title: "Confecção e Instalação",
-    description: "Cada cortina é produzida em nosso ateliê e instalada com precisão absoluta pela nossa equipe."
+    description: "Cada cortina é concebida sob nossa curadoria e instalada com precisão absoluta pela nossa equipe."
   },
   {
     icon: Sparkles,
@@ -28,7 +28,7 @@ const steps = [
 
 export function InstallationJourney() {
   return (
-    <section className="py-24 bg-white">
+    <section id="jornada" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
