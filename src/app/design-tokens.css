@@ -1,0 +1,30 @@
+@theme {
+  --color-gold-50: #fdfbf0;
+  --color-gold-100: #f7f1d1;
+  --color-gold-200: #eee0a3;
+  --color-gold-300: #e3c86d;
+  --color-gold-400: #d9ab41;
+  --color-gold-500: #d4af37; /* Base Gold */
+  --color-gold-600: #b98929;
+  --color-gold-700: #936323;
+  --color-gold-800: #7b4f23;
+  --color-gold-900: #694321;
+  --color-gold-950: #3c2310;
+
+  --color-paper: #f9f9f7;
+  --color-paper-dark: #f2f2ef;
+
+  --font-display: "Playfair Display", serif;
+  --font-body: var(--font-geist-sans), sans-serif;
+
+  --animate-curtain-open: curtain-open 1.5s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+}
+
+@keyframes curtain-open {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
