@@ -11,17 +11,17 @@ export const ASSETS = {
     slides: [
       {
         id: 1,
-        image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop",
+        image: "https://i.pinimg.com/1200x/09/89/dd/0989dd7826403f6c1726b96ed40ea936.jpg",
         title: "Beleza em cada detalhe",
       },
       {
         id: 2,
-        image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2069&auto=format&fit=crop",
+        image: "https://i.pinimg.com/1200x/a0/72/ba/a072ba4c2edc38733e6bac97aaf59fd1.jpg",
         title: "Conforto e Tecnologia",
       },
       {
         id: 3,
-        image: "https://images.unsplash.com/photo-1615873968403-89e068628260?q=80&w=2064&auto=format&fit=crop",
+        image: "https://i.pinimg.com/1200x/7c/b7/71/7cb77139d72d196001d839f0400e3762.jpg",
         title: "Acabamento Premium",
       }
     ]
@@ -32,19 +32,19 @@ export const ASSETS = {
       {
         id: "linho",
         name: "Linho Premium",
-        image: "https://images.unsplash.com/photo-1615873968403-89e068628260?q=80&w=2064&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/38/45/ab/3845abc323b540c48906c056260043ea.jpg",
         description: "Textura natural e sofisticação atemporal."
       },
       {
         id: "blackout",
         name: "Blackout Total",
-        image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2069&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/fa/a0/c0/faa0c0e03d53736fe3aabdf1616cefce.jpg",
         description: "Privacidade absoluta e conforto térmico."
       },
       {
         id: "automacao",
         name: "Automação Inteligente",
-        image: "https://images.unsplash.com/photo-1558211583-d26f610c1eb1?q=80&w=2006&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/f5/a1/f3/f5a1f32466df3f37153b00236a28f96b.jpg",
         description: "Conforto ao toque de um botão."
       }
     ]
@@ -52,7 +52,7 @@ export const ASSETS = {
   story: {
     title: "Excelência em cada detalhe",
     description: "Com mais de 10 anos de experiência, nosso processo exclusivo garante que cada peça seja única, respeitando os mínimos detalhes de cada projeto.",
-    image: "https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=2070&auto=format&fit=crop",
+    image: "https://i.pinimg.com/736x/7b/44/14/7b441465a58537a4aac253e37e8b3c28.jpg",
   },
   environments: {
     title: "Ambientes para se inspirar",
@@ -61,31 +61,28 @@ export const ASSETS = {
       {
         id: "sala",
         name: "Sala de Estar",
-        image: "https://images.unsplash.com/photo-1616489953149-755e3478950c?q=80&w=2070&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/1f/f0/39/1ff039e826206c694a6c62e3bb94b52e.jpg",
         description: "Para a sala de estar, focamos em tecidos que permitam a entrada de luz natural suave, mantendo a privacidade. O linho rústico traz calor e textura, complementando o design moderno dos móveis.",
         gallery: [
-          "https://images.unsplash.com/photo-1616489953149-755e3478950c?q=80&w=2070&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop"
+          "https://i.pinimg.com/736x/1f/f0/39/1ff039e826206c694a6c62e3bb94b52e.jpg",
         ]
       },
       {
         id: "quarto",
         name: "Quarto Principal",
-        image: "https://images.unsplash.com/photo-1616594831707-1239c7fab84c?q=80&w=2034&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/c6/0e/06/c60e06c8c145953d01c64eb4ffbd232e.jpg",
         description: "O repouso absoluto é a nossa prioridade. Utilizamos sistemas blackout de tripla camada integrados com trilhos suiços motorizados, garantindo escuridão total ao toque de um botão.",
         gallery: [
-          "https://images.unsplash.com/photo-1616594831707-1239c7fab84c?q=80&w=2034&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2069&auto=format&fit=crop"
+          "https://i.pinimg.com/736x/c6/0e/06/c60e06c8c145953d01c64eb4ffbd232e.jpg",
         ]
       },
       {
         id: "escritorio",
         name: "Escritório & Home Office",
-        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/ac/d5/aa/acd5aac2d9312a6875821ccc115b05d0.jpg",
         description: "Foco e produtividade exigem controle de brilho. Nossas telas solares reduzem o reflexo em telas sem comprometer a vista ou a luminosidade do ambiente de trabalho.",
         gallery: [
-          "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1518455027359-f3f816b1a2aa?q=80&w=2070&auto=format&fit=crop"
+          "https://i.pinimg.com/736x/ac/d5/aa/acd5aac2d9312a6875821ccc115b05d0.jpg",
         ]
       }
     ]

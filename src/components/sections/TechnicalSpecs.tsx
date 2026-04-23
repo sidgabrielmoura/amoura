@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Cpu, Moon, Sun, Wind, ShieldCheck, Ruler } from "lucide-react";
+import { Smartphone, Moon, Sun, Wind, ShieldCheck, Ruler } from "lucide-react";
 
 const specs = [
   {
@@ -12,7 +12,7 @@ const specs = [
     textColor: "text-white"
   },
   {
-    icon: Cpu,
+    icon: Smartphone,
     title: "Automação Inteligente",
     description: "Integração total com Alexa, Google Home e Siri Shortcuts.",
     color: "bg-gold-50",
@@ -87,7 +87,11 @@ export function TechnicalSpecs() {
               whileHover={{ scale: 1.02 }}
               className={`p-10 rounded-sm border border-gold-200/20 shadow-sm flex flex-col items-center text-center group ${spec.color} ${spec.textColor}`}
             >
-              <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:rotate-12 ${spec.color === 'bg-white' || spec.color === 'bg-paper-dark' ? 'bg-gold-50 text-gold-600' : 'bg-white/20 text-white'}`}>
+              <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:rotate-12 ${
+                spec.color === 'bg-white' || spec.color === 'bg-gold-50' || spec.color === 'bg-paper-dark' 
+                  ? 'bg-gold-100 text-gold-600' 
+                  : 'bg-white/20 text-white'
+              }`}>
                 <spec.icon className="w-6 h-6" />
               </div>
               <h3 className="text-xl mb-4">{spec.title}</h3>

@@ -12,10 +12,10 @@ export function CataloguePreview() {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollTo = direction === 'left' 
-        ? scrollLeft - clientWidth / 2 
+      const scrollTo = direction === 'left'
+        ? scrollLeft - clientWidth / 2
         : scrollLeft + clientWidth / 2;
-      
+
       scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
     }
   };
@@ -25,14 +25,14 @@ export function CataloguePreview() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-xl">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="text-gold-600 font-medium tracking-widest uppercase text-xs block mb-4"
             >
               Coleções Amoura
             </motion.span>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl"
@@ -40,16 +40,16 @@ export function CataloguePreview() {
               Escolha o tecido que conta a sua história.
             </motion.h2>
           </div>
-          
+
           <div className="flex gap-4">
-            <button 
+            <button
               onClick={() => scroll('left')}
               className="w-12 h-12 rounded-full border border-gold-200 flex items-center justify-center hover:bg-gold-50 transition-colors"
               aria-label="Anterior"
             >
               <ChevronLeft className="w-5 h-5 text-gold-700" />
             </button>
-            <button 
+            <button
               onClick={() => scroll('right')}
               className="w-12 h-12 rounded-full border border-gold-200 flex items-center justify-center hover:bg-gold-50 transition-colors"
               aria-label="Próximo"
@@ -59,7 +59,7 @@ export function CataloguePreview() {
           </div>
         </div>
 
-        <div 
+        <div
           ref={scrollRef}
           className="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -76,8 +76,8 @@ export function CataloguePreview() {
               {/* Image Container with Fixed Height */}
               <div className="w-full h-[400px] md:h-[520px] shrink-0 overflow-hidden relative mb-6 bg-stone-100">
                 <div className="absolute inset-0 bg-gold-950/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                <motion.img 
-                  src={item.image} 
+                <motion.img
+                  src={item.image}
                   alt={item.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   onError={(e) => {
@@ -93,7 +93,7 @@ export function CataloguePreview() {
                   </p>
                 </div>
               </div>
-              
+
               {/* Text Content */}
               <div className="flex flex-col">
                 <h3 className="text-2xl mb-2 text-gold-900 font-display">{item.name}</h3>
