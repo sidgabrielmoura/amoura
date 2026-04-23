@@ -101,6 +101,7 @@ export function BrandStory() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
+              onClick={() => document.getElementById('jornada')?.scrollIntoView({ behavior: 'smooth' })}
               className="group flex items-center gap-3 text-gold-800 font-medium"
             >
               <div className="w-12 h-12 rounded-full border border-gold-500 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">

@@ -137,9 +137,14 @@ export function EnvironmentsSection() {
                 </div>
 
                 <div className="mt-12">
-                  <button className="w-full py-4 bg-gold-500 text-gold-950 font-bold uppercase tracking-widest text-sm hover:bg-gold-600 transition-colors">
+                  <a 
+                    href={ASSETS.contact.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full py-4 bg-gold-500 text-gold-950 font-bold uppercase tracking-widest text-sm hover:bg-gold-600 transition-colors text-center"
+                  >
                     Solicitar orçamento para este ambiente
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>

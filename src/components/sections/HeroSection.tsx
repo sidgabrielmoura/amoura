@@ -90,11 +90,17 @@ export function HeroSection() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-8 py-4 bg-gold-500 hover:bg-gold-600 text-gold-950 font-semibold rounded-sm transition-all duration-300 flex items-center gap-2 group">
+            <button 
+              onClick={() => document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-gold-500 hover:bg-gold-600 text-gold-950 font-semibold rounded-sm transition-all duration-300 flex items-center gap-2 group"
+            >
               {ASSETS.hero.cta}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 border border-white/30 hover:bg-white/10 text-white font-medium rounded-sm transition-all duration-300 backdrop-blur-sm">
+            <button 
+              onClick={() => document.getElementById('nossa-historia')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 border border-white/30 hover:bg-white/10 text-white font-medium rounded-sm transition-all duration-300 backdrop-blur-sm"
+            >
               Conheça Amoura
             </button>
           </div>
